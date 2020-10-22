@@ -1,0 +1,13 @@
+1. SELECT * FROM actor;
+2. SELECT last_name, first_name FROM actor WHERE first_name="John";
+3. SELECT * FROM actor WHERE last_name="Neeson";
+4. SELECT * FROM actor WHERE actor_id%10=0;
+5. SELECT description FROM film WHERE film_id=100;
+6. SELECT * FROM film WHERE rating="R";
+7. SELECT * FROM film WHERE rating!="R";
+8. SELECT film_id,title, length FROM film ORDER BY length ASC LIMIT 10;
+9. SELECT MAX(length) FROM film;? Not sure on this one.
+10. SELECT film_id, title, special_features FROM film WHERE special_features="Deleted Scenes";
+11. SELECT last_name,COUNT(*) AS LastNameCount from actor GROUP BY last_name HAVING COUNT(*)<=1 ORDER BY last_name DESC;
+12. SELECT last_name,COUNT(*) AS LastNameCount from actor GROUP BY last_name HAVING COUNT(*)>1 ORDER BY LastNameCount DESC;
+13.
