@@ -10,4 +10,18 @@
 10. SELECT film_id, title, special_features FROM film WHERE special_features="Deleted Scenes";
 11. SELECT last_name,COUNT(*) AS LastNameCount from actor GROUP BY last_name HAVING COUNT(*)<=1 ORDER BY last_name DESC;
 12. SELECT last_name,COUNT(*) AS LastNameCount from actor GROUP BY last_name HAVING COUNT(*)>1 ORDER BY LastNameCount DESC;
-13.
+13. SELECT t1.actor_id, t1.first_name, t1.last_name, COUNT(*) AS ActorTotalFilm FROM actor t1 JOIN film_actor t2 ON t1.actor_id=t2.actor_id WHERE t1.actor_id=t2.actor_id GROUP BY t1.actor_id
+ORDER BY ActorTotalFilm DESC LIMIT 1;
+14. SELECT title, release_year FROM film WHERE title="Academy Dinosaur";
+15. SELECT AVG(length) FROM film;
+16. ----
+17. SELECT title, description FROM film WHERE description LIKE "%robot%";
+18. SELECT title, release_year FROM film WHERE release_year="2010";
+19. SELECT t1.title FROM film t1 JOIN film_category t2 ON t1.film_id=t2.film_id WHERE t2.category_id="11";
+20. SELECT first_name, last_name FROM staff WHERE staff_id="2";
+21. SELECT t1.title FROM film t1 JOIN film_actor t2 ON t1.film_id=t2.film_id JOIN actor t3 ON t3.actor_id=t2.actor_id WHERE t3.first_name="Fred" AND t3.last_name="Costner";
+22. SELECT DISTINCT * FROM country;
+23. SELECT name FROM language ORDER BY name DESC;
+24. SELECT first_name, last_name FROM actor WHERE last_name LIKE "%son" ORDER BY first_name ASC;
+25. SELECT name, COUNT(name) AS CountTotal FROM category t1 JOIN film_category t2 ON t1.category_id=t2.category_id WHERE t1.category_id GROUP BY name ORDER BY CountTotal DESC LIMIT 1;
+
